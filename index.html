@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#bla"  />
+    <title>Market Cake</title>
+    
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="container-fluid bg-dark position-sticky top-0">
+      <ul
+        class="nav nav-pills mb-3 py-3 container"
+        id="pills-tab"
+        role="tablist"
+      >
+        <li class="nav-item text-primary" role="presentation">
+          <a
+            class="nav-link "
+            id="pills-home-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-home"
+            type="button"
+            role="tab"
+            aria-controls="pills-home"
+            aria-selected="true"
+            >Inicio </a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link active"
+            id="pills-profile-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-profile"
+            type="button"
+            role="tab"
+            aria-controls="pills-profile"
+            aria-selected="false"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link"
+            id="pills-contact-tab"
+            data-bs-toggle="pill"
+            data-bs-target="#pills-contact"
+            type="button"
+            role="tab"
+            aria-controls="pills-contact"
+            aria-selected="false"
+            >Carrito</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+    Producto Añadido
+    </div>
+    <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+      Producto eliminado
+    </div>
+
+
+
+    <div class="tab-content" id="pills-tabContent">
+      <div
+        class="tab-pane fade "
+        id="pills-home"
+        role="tabpanel"
+        aria-labelledby="pills-home-tab"
+      >
+      <section>
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" class="header_slider">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="./img/chemex.jpg" class="d-block w-100" alt="chemex">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="./img/place.jpg" class="d-block w-100" alt="place">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+              <img src="./img/specialty.jpg" class="d-block w-100" alt="specialty">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <article class="home-article text-center" id="section-1">
+          <div class="home-title">
+              <p class="home-text my-3">BIENVENIDO A</p>
+              <h1>Codigo Cafè</h1>
+          </div>
+      </article>
+
+      
+        <section>
+          <div class="container-fluid">
+            <div class="row about_div d-flex">
+              <div class="col-12 col-md-6 col-lg-6 col-xl-6 m-auto">
+                <h2 class="about_title"> Sobre Nosotros</h2>
+                <p class="about_text"> Codigo Cafe Specialty Coffee llega como una nueva forma de entender el café, una visión creativa y artesana, albergado en un espacio que refleja igualmente esta filosofía. Podrás disfrutar del café de especialidad como una experiencia completa, auténtico café de especialidad, recién tostado, una vivencia inigualable</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6 about_img"></div>
+            </div>
+          </div>
+          </section>
+
+
+    <article class="reserva-article" id="section-3">
+      <div class="container">
+          <h2 class="reserva-title">Reserve su mesa online</h2>
+          <i class="fas fa-bell" id="notification-btn"></i>
+          <!--Div listado reservas-->
+          <div class="div-notificacion-reserva" id="notificacionReservas"></div>
+          <p class="reserva-text"> Complete los campos obligatorios para gestionar su reserva.</p>
+          <!--Form reserva-->
+          <form id="formulario">
+              <div class="row">
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="text" name="fname" id="fname">
+                          <label for="fname">Nombre</label>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="text" name="lname" id="lname">
+                          <label for="lname">Apellido</label>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="text" name="tel" id="tel">
+                          <label for="tel">Teléfono</label>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="email" name="mail" id="email">
+                          <label for="email">Mail</label>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="date" name="date" id="date">
+                          <label for="date">Día</label>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="time" name="time" id="time">
+                          <label for="time">Hora</label>
+                      </div>
+                  </div>
+                  <div class="col-12 col-sd-12 col-md-12 col-lg-6 col-xl-6 wrapper">
+                      <div class="box">
+                          <input type="number" name="cantidad" id="cantidad">
+                          <label for="cantidad">Cantidad de personas</label>
+                      </div>
+                  </div>
+                  <div class="col-1 wrapper">
+                      <input type="submit" name="enviar" value="Enviar" id="submit-btn">
+                  </div>
+              </div>
+          </form>
+      </div>
+      <!--Div datos reserva-->
+      <div id="datosReserva"></div>
+  </article>
+  
+      </section>  
+
+
+
+
+
+      </div>
+      <div
+        class="tab-pane fade show active container"
+        id="pills-profile"
+        role="tabpanel"
+        aria-labelledby="pills-profile-tab"
+      >
+        <h2 class="h4 m-4 text-primary">Productos</h2>
+
+        <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary"> TORTA APPLE PIE </h5>
+              <img src="./img/app.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">La torta del año,exquisito crumble con manzanas frescas ,y en su base una masa ligera</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 3000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary"> TORTA CHOCOREO</h5>
+              <img src="./img/chocoreo.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">Deliciosa torta cubierta con crema y dulce de leche,y en su base una excelente capa de oreos</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 2000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary">TORTA KEYLIME
+              </h5>
+              <img src="./img/keylime.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">Exquisito manjar de limon,con merengue flambeado y relleno de limon.</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 1400</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary">TORTA MARROC</h5>
+              <img src="./img/marroc.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">La novedad es nuestra Marroc,relleno marroc envuelto en una deliciosa capa de chocolate francés.</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 2000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary">TORTA MILCAKE</h5>
+              <img src="./img/milcake.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">La deliciosa milcake es la que piden todos,fresco chocolate con leche y dulce de leche en su interior'</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 2000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary">TORTA MARROC</h5>
+              <img src="./img/marroc.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">La novedad es nuestra Marroc,relleno marroc envuelto en una deliciosa capa de chocolate francés.</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 2000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary">TORTA MARROC</h5>
+              <img src="./img/marroc.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">La novedad es nuestra Marroc,relleno marroc envuelto en una deliciosa capa de chocolate francés.</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 2000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-white rounded" style="width: 20rem;">
+              <h5 class="card-title pt-2 text-center text-primary">TORTA MARROC</h5>
+              <img src="./img/marroc.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text text-dark-50 description">La novedad es nuestra Marroc,relleno marroc envuelto en una deliciosa capa de chocolate francés.</p>
+                <h5 class="text-primary">Precio: <span class="precio">$ 2000</span></h5>
+                <div class="d-grid gap-2">
+                <button  class="btn btn-primary button">Añadir a Carrito</button>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+      <div
+        class="tab-pane fade carrito"
+        id="pills-contact"
+        role="tabpanel"
+        aria-labelledby="pills-contact-tab"
+      >
+      <br>
+      <table class="table table-grey table-hover">
+        <thead>
+          <tr class="text-primary">
+            <th scope="col">#</th>
+            <th scope="col">Productos</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          
+        
+          
+        </tbody>
+      </table>
+      <br><br>
+      <div class="row mx-4">
+        <div class="col">
+          <h3 class="itemCartTotal text-white">Total: 0</h3>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <button class="btn btn-success">COMPRAR</button>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    <div>
+      <button id="arriba">Ir a arriba</button>
+    </div>
+
+    <footer class="bg-dark p-3 mt-5">
+      <p class="text-center m-0 text-muted"> Tienda de Tortas - 2022 </p>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
