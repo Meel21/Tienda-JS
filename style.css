@@ -173,7 +173,7 @@ header, .alert{
   }
 }
 
-.div-notificacion-reserva {
+.div-reserva {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -187,17 +187,17 @@ header, .alert{
   z-index: 2;
 }
 @media (max-width: 575.98px) {
-  .div-notificacion-reserva {
+  .div-reserva {
     width: 90%;
     left: auto;
     right: 5%;
   }
 }
-.div-notificacion-reserva .title-cerrar {
+.div-reserva .title-cerrar {
   display: flex;
   justify-content: space-between;
 }
-.div-notificacion-reserva h6 {
+.div-reserva h6 {
   font-family: "Source Serif Pro", serif;
   font-size: 1.5rem;
   font-weight: 600;
@@ -205,24 +205,24 @@ header, .alert{
   padding: 1rem 1.5rem;
   margin: 0;
 }
-.div-notificacion-reserva button {
+.div-reserva button {
   border: none;
   background-color: transparent;
 }
-.div-notificacion-reserva button .fa-times {
+.div-reserva button .fa-times {
   color: white;
   font-size: 1.2rem;
   text-align: right;
   margin: 0rem 2rem;
 }
-.div-notificacion-reserva button .fa-times:hover {
+.div-reserva button .fa-times:hover {
   color: #DFB900;
 }
-.div-notificacion-reserva .fa-calendar-day {
+.div-reserva .fa-calendar-day {
   color: #e3b900;
   font-size: 1.2rem;
 }
-.div-notificacion-reserva .icon-data-reserva {
+.div-reserva .icon-data-reserva {
   display: flex;
   align-items: center;
   padding: 0rem 1rem;
