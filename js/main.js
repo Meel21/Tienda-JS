@@ -63,8 +63,26 @@ function mostrarReservaDom(){
   });
 }
 
-
-
+function mostrarNotificacionReserva(){
+  let getDatosReserva = JSON.parse(localStorage.getItem(1));
+  
+  $(`#notificacionReservas`).append($(`<div id="sub-div-notificacion" style="display: none"; height: 100%">
+                                          <div class="title-cerrar">
+                                              <h6>Reservas</h6>
+                                              <button id="btn-cerrar-not"><i class="fas fa-times"></i></button>
+                                          </div>
+                                          <div class="icon-data-reserva">
+                                              <i class="fas fa-calendar-day"></i>
+                                              <p><b>${getDatosReserva[0].dia} / ${getDatosReserva[0].hora}</b>. Mesa a nombre de <b>${getDatosReserva[0].nombre} ${getDatosReserva[0].apellido}</b> para ${getDatosReserva[0].cantidadPersonas} personas.</p>
+                                          </div>
+                                      </div>`).slideDown(500));
+  
+  $(`#btn-cerrar-not`).on("click", function(){
+      $(`#sub-div-notificacion`).slideUp(500, function(){
+      $(`#sub-div-notificacion`).remove();
+      });
+  });
+}
 
 const Clickbutton = document.querySelectorAll('.button')
 const tbody = document.querySelector('.tbody')
@@ -86,7 +104,7 @@ function addToCarritoItem(e){
     title: itemTitle,
     precio: itemPrice,
     img: itemImg,
-    cantidad: 1
+    cantidad: 1,
   }
 
   addItemCarrito(newItem)
@@ -128,7 +146,7 @@ function renderCarrito(){
     
     <th scope="row">1</th>
             <td class="table__productos">
-              <img src=${item.img}  alt="">
+              <img src= ${item.img}  alt="">
               <h6 class="title">${item.title}</h6>
             </td>
             <td class="table__price"><p>${item.precio}</p></td>
@@ -137,7 +155,7 @@ function renderCarrito(){
               <button class="delete btn btn-danger">x</button>
             </td>
     
-    `
+`
     tr.innerHTML = Content;
     tbody.append(tr)
 
@@ -211,3 +229,18 @@ $('#arriba').on('click',function (){
   $('html,body').animate ({scrollTop: 0},800);
   
   });
+
+
+
+/*ARRAY RESERVA*/
+const arrayReservas = [];
+
+/*LLAMADOS LISTENER*/
+let formReserva = document.getElementById("formulario");
+formReserva.addEventListener("submit", function(e){
+    e.preventDefault();
+    validarFormReserva();
+    formReserva.reset();
+});
+
+$(`#notification-btn`).on("click", mostrarNotificacionReserva);
